@@ -1,0 +1,23 @@
+{
+  "name": "@warriortrading/edx-plugin-learner-dashboard",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Open edX learner dashboard MFE plugin configuration (Frontend Plugin Framework)",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "validate": "node scripts/validate-config.mjs"
+  },
+  "dependencies": {
+    "@openedx/frontend-plugin-framework": "^1.7.0"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-plugin-import": "^2.29.1"
+  }
+}

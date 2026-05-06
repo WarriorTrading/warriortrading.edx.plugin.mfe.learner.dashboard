@@ -8,10 +8,13 @@ The homepage of the Learner Dashboard, by default, doesn't sort alphabetically. 
 
 We want the learner to land on that dashboard already sorted for them alphabetically.
 
+Implementation: [`src/plugins/course-list-alphabetical/`](../src/plugins/course-list-alphabetical/index.js) (composed via root [`env.config.js`](../env.config.js)).
+
 ## Hide Components using CSS
 
 - In the `/learner-dashboard`
     - [ ] (LM-123) Each course that is listed shows `Grade required to pass the course: XX%`. We want to CSS hide that.
-- Page `/learning/course/course-v1:courseid/home`
-    - [ ] (LM-152) The listings show the time after each section: `1 min + 3 activities` - Hide that.
+
+Implementation: [`src/plugins/hide-grade-required/`](../src/plugins/hide-grade-required/index.js) (composed via root [`env.config.js`](../env.config.js)).
+
 
