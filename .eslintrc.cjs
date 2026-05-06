@@ -11,6 +11,7 @@ module.exports = {
   },
   plugins: ['import'],
   extends: ['eslint:recommended', 'plugin:import/recommended'],
+  settings: {},
   rules: {
     'import/extensions': ['error', 'ignorePackages', { js: 'always' }],
   },
@@ -20,6 +21,10 @@ module.exports = {
       rules: {
         'import/extensions': 'off',
       },
+    },
+    {
+      files: ['src/plugins/course-list-alphabetical/CourseListSlotAugment.js'],
+      env: { browser: true },
     },
   ],
 };

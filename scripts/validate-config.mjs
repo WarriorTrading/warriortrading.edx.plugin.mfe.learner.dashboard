@@ -1,4 +1,4 @@
-import { buildPluginSlots } from '../src/buildConfig.js';
+import { buildPluginSlots } from '../src/buildConfig.validate.js';
 
 const pluginSlots = buildPluginSlots();
 

@@ -1,19 +1,11 @@
 /**
- * Hide “Grade required to pass the course” (LM-123) on /learner-dashboard.
+ * LM-123 (hide audit “Grade required to pass the course”) lives in
+ * {@link ../course-list-alphabetical/CourseListSlotAugment.js} together with default
+ * Title (A–Z) sort — one DIRECT_PLUGIN on the course list slot so slot props match the host.
  *
- * Prefer FPF `Hide` / `Wrap` on `default_contents` when the host exposes a slot;
- * otherwise use CSS or brand SCSS after inspecting the DOM and slot structure.
- *
- * Set slot IDs in `src/shared/constants.js` after checking Ulmo’s
- * frontend-app-learner-dashboard for `PluginSlot` `id` values.
- *
- * Use symbols from `src/shared/pluginFramework.js` when defining operations.
+ * This module stays as an empty merge fragment for backwards-compatible imports from
+ * {@link ../../buildConfig.js}.
  */
 
 /** @type {Record<string, object>} */
-export const hideGradeRequiredPluginSlots = {
-  // [SLOT_IDS.courseCard]: {
-  //   keepDefault: true,
-  //   plugins: [],
-  // },
-};
+export const hideGradeRequiredPluginSlots = {};

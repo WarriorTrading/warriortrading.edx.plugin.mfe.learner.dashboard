@@ -1,4 +1,5 @@
 import { buildPluginSlots } from './src/buildConfig.js';
+import { SLOT_IDS } from './src/shared/constants.js';
 import {
   DIRECT_PLUGIN,
   IFRAME_PLUGIN,
@@ -15,8 +16,16 @@ if (!PLUGIN_OPERATIONS || !DIRECT_PLUGIN || !IFRAME_PLUGIN) {
  * you need (typically `pluginSlots`). Tutor/Docker may deep-merge or replace
  * `env.config.js` — document your Ulmo pipeline in README.
  */
+const pluginSlots = buildPluginSlots();
+// FPF `usePluginSlot` resolves config with `findLast` over keys matching the slot
+// `id` or any `idAlias`. Mirror the canonical id onto `course_list_slot` so a
+// later empty entry under the alias cannot win over this merged config.
+if (pluginSlots[SLOT_IDS.courseList]) {
+  pluginSlots.course_list_slot = pluginSlots[SLOT_IDS.courseList];
+}
+
 const config = {
-  pluginSlots: buildPluginSlots(),
+  pluginSlots,
 };
 
 export default config;
